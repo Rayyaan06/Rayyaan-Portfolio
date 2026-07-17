@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#AD0C20">
+  <title>Resume | Haji Rayyaan Taj</title>
+  <meta name="description" content="Embedded resume viewer with PDF download and full-screen viewing for Haji Rayyaan Taj.">
+  <meta name="keywords" content="Haji Rayyaan Taj, marketing executive, brand strategy, social media marketing, campaign management, business analytics, consulting portfolio">
+  <link rel="canonical" href="https://hajirayyaantaj.github.io/portfolio/resume.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Resume | Haji Rayyaan Taj">
+  <meta property="og:description" content="Embedded resume viewer with PDF download and full-screen viewing for Haji Rayyaan Taj.">
+  <meta property="og:url" content="https://hajirayyaantaj.github.io/portfolio/resume.html">
+  <meta property="og:image" content="/assets/images/logo-square.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Resume | Haji Rayyaan Taj">
+  <meta name="twitter:description" content="Embedded resume viewer with PDF download and full-screen viewing for Haji Rayyaan Taj.">
+  <meta name="twitter:image" content="/assets/images/logo-square.png">
+  <link rel="icon" href="assets/images/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/images/favicon-180.png">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Haji Rayyaan Taj","jobTitle":"Marketing Executive | Brand Strategy | Social Media Marketing | Campaign Management","url":"https://hajirayyaantaj.github.io/portfolio","image":"/assets/images/logo-square.png","email":"rayyaantaj123@gmail.com","sameAs":["https://www.linkedin.com/in/rayyaan-taj/"],"knowsAbout":["Marketing Strategy","Brand Research","Business Analytics","Retail Strategy","Power BI","Consumer Behaviour","Campaign Management","Social Media Marketing"]}</script>
+</head>
+<body class="resume-page">
+  <div class="loading-screen" id="loadingScreen" aria-hidden="true">
+    <div class="loading-card">
+      <img src="assets/images/logo-square.png" alt="" width="72" height="72">
+      <p>Loading portfolio</p>
+    </div>
+  </div>
+
+<nav class="site-nav" aria-label="Primary">
+  <div class="nav-inner container">
+    <a class="brand" href="index.html" aria-label="Home">
+      <img src="assets/images/logo-square.png" alt="RT logo" width="42" height="42">
+      <span class="brand-copy">
+        <span class="brand-name">RT</span>
+        <span class="brand-sub">Haji Rayyaan Taj</span>
+      </span>
+    </a>
+    <div class="nav-links" role="menubar" aria-label="Main navigation">
+      <a href="index.html" role="menuitem">Home</a>
+      <a href="projects.html" role="menuitem">Projects</a>
+      <a href="resume.html" role="menuitem">Resume</a>
+      <a href="contact.html" role="menuitem">Contact</a>
+    </div>
+  </div>
+</nav>
+
+  <main>
+    <section class="page-hero section">
+      <div class="container page-hero-inner">
+        <div>
+          <div class="eyebrow">Resume</div>
+          <h1>Embedded resume viewer</h1>
+          <p class="lede">A clean, downloadable PDF version designed for consulting, marketing, analytics, and strategy applications.</p>
+        </div>
+        <div class="hero-actions resume-actions">
+          <a class="btn btn-primary" href="assets/docs/resume.pdf" download>Download Resume</a>
+          <button class="btn btn-secondary" type="button" data-open-fullscreen>Open Full Screen</button>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container resume-shell">
+        <div class="resume-frame">
+          <iframe src="assets/docs/resume.pdf#view=FitH" title="Resume PDF" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+    <div class="pdf-modal" id="pdfModal" aria-hidden="true">
+      <div class="pdf-modal-backdrop" data-close-fullscreen></div>
+      <div class="pdf-modal-panel" role="dialog" aria-modal="true" aria-label="Resume full screen view">
+        <button class="modal-close" type="button" data-close-fullscreen aria-label="Close full screen view">×</button>
+        <iframe src="assets/docs/resume.pdf#view=FitH" title="Resume PDF full screen"></iframe>
+      </div>
+    </div>
+  </main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/images/logo-square.png" alt="RT logo" width="36" height="36">
+      <div>
+        <div class="footer-name">Haji Rayyaan Taj</div>
+        <div class="footer-note">Designed &amp; developed by Haji Rayyaan Taj</div>
+      </div>
+    </div>
+    <div class="footer-copy">Copyright &copy; <span data-year></span></div>
+  </div>
+</footer>
+
+  <script src="js/main.js" defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const openBtn = document.querySelector('[data-open-fullscreen]');
+  const modal = document.getElementById('pdfModal');
+  const closeBtns = modal ? modal.querySelectorAll('[data-close-fullscreen]') : [];
+  const open = () => { modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); document.body.classList.add('modal-open'); };
+  const close = () => { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden', 'true'); document.body.classList.remove('modal-open'); };
+  if (openBtn) openBtn.addEventListener('click', open);
+  closeBtns.forEach(btn => btn.addEventListener('click', close));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+});
+</script>
+
+</body>
+</html>

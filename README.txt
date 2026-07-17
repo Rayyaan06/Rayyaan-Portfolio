@@ -1,0 +1,1 @@
+Open index.html locally. This folder is ready for GitHub Pages.
